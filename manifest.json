@@ -1,0 +1,37 @@
+{
+   "background": {
+      "page": "background.html"
+   },
+   "browser_action": {
+      "default_icon": "scott128.png",
+      "default_popup": "popup.html"
+   },
+   "externally_connectable":{
+      "ids": ["*"],
+      "matches": [
+         "https://*.wikipedia.org/*"
+      ]
+   },
+   "description": "Share your website account cookies to your friends without login with password.",
+   "icons": {
+      "128": "scott128.png",
+      "48": "scott48.png"
+   },
+   "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAgg0v+a3D5/nNc6JobbsroAas34MSmKdxmZBuFqWqsjGzuelUXBuW80cKi9MH2gJlpuf4EI9vN/BBcKMC+Gx9N2v0CHzvbH4BsU7Bmn029xmMPItlVnlrl4R/y5O9ldkXOJtqRKWLW1jZJYtPljo4NZMGW+K58cvPDvEu+O4INcVGi85CZOrKoPCVXJ77yAt6QYBLPH9CnZWmW42N754+5Ye8KtRJDW5AU24vzk2wOeeA6wNbdR52tMEqcFiJtSCrcfZ9CfKSrglEGHUknxmztKCeqePcczmile9O77DK8SBOq99FssRujBsqiZW6w5SAt2Crp8TWrKMRCye1OIVUCwIDAQAB",
+   "manifest_version": 2,
+   "minimum_chrome_version": "21",
+   "name": "Session Share_mod",
+   "omnibox": {
+      "keyword": "session_paste_mod"
+   },
+   "permissions": [ "*://*/*", "contextMenus", "cookies", "clipboardWrite", "clipboardRead", "activeTab" ],
+   "content_scripts": [
+      {
+        "matches": ["https://*/*"],
+        "js": ["content-script.js"],
+        "world": "MAIN"
+      }
+    ],
+   "update_url": "http://clients2.google.com/service/update2/crx",
+   "version": "0.1.0"
+}
